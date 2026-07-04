@@ -11,10 +11,13 @@ import './App.css';
 function App() {
   const [lightbox, setLightbox] = useState(null);
 
-  const openLightbox = (categoryId, index) => setLightbox({ categoryId, index });
+  const openLightbox = (categoryId, projectId, index) =>
+    setLightbox({ categoryId, projectId, index });
   const closeLightbox = () => setLightbox(null);
 
-  const activeImages = categories.find((c) => c.id === lightbox?.categoryId)?.images;
+  const activeProject = categories
+    .find((c) => c.id === lightbox?.categoryId)
+    ?.projects.find((p) => p.id === lightbox?.projectId);
 
   return (
     <div className="site">
@@ -25,12 +28,13 @@ function App() {
       <main>
         <Gallery categories={categories} onSelect={openLightbox} />
       </main>
-      {lightbox && activeImages && (
+      {lightbox && activeProject && (
         <Lightbox
-          images={activeImages}
+          images={activeProject.images}
+          description={activeProject.description}
           index={lightbox.index}
           onClose={closeLightbox}
-          onNavigate={(newIndex) => setLightbox({ categoryId: lightbox.categoryId, index: newIndex })}
+          onNavigate={(newIndex) => setLightbox({ ...lightbox, index: newIndex })}
         />
       )}
     </div>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-function Lightbox({ images, index, onClose, onNavigate }) {
+function Lightbox({ images, description, index, onClose, onNavigate }) {
   const current = images[index];
   const nextIndex = (index + 1) % images.length;
   const next = images[nextIndex];
@@ -39,7 +39,7 @@ function Lightbox({ images, index, onClose, onNavigate }) {
               <img src={next.src} alt={next.alt} />
             </button>
           </div>
-          {current.description && <p className="lightbox-description">{current.description}</p>}
+          {description && <p className="lightbox-description">{description}</p>}
         </div>
       </div>
     </div>

@@ -1,49 +1,48 @@
-const proyectosImages = import.meta.glob('../assets/images/proyectos/*', {
-  eager: true,
-  import: 'default',
-});
-const worksImages = import.meta.glob('../assets/images/works/*', {
-  eager: true,
-  import: 'default',
-});
-const capsulaImages = import.meta.glob('../assets/images/capsula/*', {
+import { projectsMeta } from './projectsMeta';
+
+const categoryDefs = [
+  { id: 'proyectos', label: 'Proyectos' },
+  { id: 'works', label: 'Works' },
+  { id: 'capsula', label: 'Capsula' },
+];
+
+// Matches src/assets/images/<category>/<project-slug>/<file>
+const allImages = import.meta.glob('../assets/images/{proyectos,works,capsula}/*/*', {
   eager: true,
   import: 'default',
 });
 
-// Filled in per category as real project descriptions come in; index matches
-// the alphabetical file order within each assets/images/<category> folder.
-const descriptions = {
-  proyectos: [],
-  works: [],
-  capsula: [],
-};
-
-function toSortedArray(globObj, prefix) {
-  return Object.keys(globObj)
+function buildProjects(categoryId) {
+  const bySlug = {};
+  const prefix = `../assets/images/${categoryId}/`;
+  Object.keys(allImages)
+    .filter((path) => path.startsWith(prefix))
     .sort()
-    .map((key, i) => ({
-      id: `${prefix}-${i}`,
-      src: globObj[key],
-      alt: `${prefix} ${i + 1}`,
-      description: descriptions[prefix]?.[i] ?? '',
-    }));
+    .forEach((path) => {
+      const rest = path.slice(prefix.length);
+      const slug = rest.split('/')[0];
+      bySlug[slug] ??= [];
+      bySlug[slug].push(allImages[path]);
+    });
+
+  return Object.keys(bySlug)
+    .sort()
+    .map((slug) => {
+      const meta = projectsMeta[slug];
+      return {
+        id: slug,
+        title: meta?.title ?? slug,
+        description: meta?.description ?? '',
+        images: bySlug[slug].map((src, i) => ({
+          id: `${slug}-${i}`,
+          src,
+          alt: `${meta?.title ?? slug} ${i + 1}`,
+        })),
+      };
+    });
 }
 
-export const categories = [
-  {
-    id: 'proyectos',
-    label: 'Proyectos',
-    images: toSortedArray(proyectosImages, 'proyectos'),
-  },
-  {
-    id: 'works',
-    label: 'Works',
-    images: toSortedArray(worksImages, 'works'),
-  },
-  {
-    id: 'capsula',
-    label: 'Capsula',
-    images: toSortedArray(capsulaImages, 'capsula'),
-  },
-];
+export const categories = categoryDefs.map((c) => ({
+  ...c,
+  projects: buildProjects(c.id),
+}));
