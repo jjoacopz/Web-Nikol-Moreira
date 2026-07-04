@@ -164,12 +164,6 @@
   min-width: 0;
 }
 
-.gallery-title {
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  margin-bottom: 24px;
-}
-
 .gallery-grid {
   column-gap: 20px;
 }

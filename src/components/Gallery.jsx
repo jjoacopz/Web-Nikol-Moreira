@@ -10,7 +10,6 @@ function Gallery({ categories, onSelect }) {
       <div className="gallery-columns">
         {categories.map((category) => (
           <div key={category.id} className="gallery-column">
-            <h2 className="gallery-title">{category.label.toUpperCase()}</h2>
             <div
               className="gallery-grid"
               style={{ columnCount: COLUMNS_BY_CATEGORY[category.id] ?? 2 }}
