@@ -144,10 +144,6 @@
   transition: font-weight 0.15s ease;
 }
 
-.nav-link.is-active {
-  font-weight: 700;
-}
-
 .nav-logo {
   font-size: 18px;
   font-weight: 700;
@@ -162,36 +158,34 @@
 
 /* Gallery */
 .gallery {
-  padding: 64px 32px 0;
+  padding: 64px 32px;
+}
+
+.gallery-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.gallery-column {
+  min-width: 0;
 }
 
 .gallery-title {
   font-size: 13px;
   letter-spacing: 1.5px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .gallery-grid {
-  column-count: 3;
-  column-gap: 24px;
-}
-
-@media (max-width: 900px) {
-  .gallery-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 560px) {
-  .gallery-grid {
-    column-count: 1;
-  }
+  column-gap: 12px;
 }
 
 .gallery-item {
   display: block;
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   break-inside: avoid;
   overflow: hidden;
 }
@@ -204,6 +198,19 @@
 
 .gallery-item:hover img {
   opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .gallery-columns {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    column-count: 2 !important;
+  }
 }
 
 /* Fotolibro */

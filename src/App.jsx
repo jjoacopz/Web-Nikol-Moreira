@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Intro from './components/Intro';
@@ -17,26 +17,7 @@ const fotolibroImages = [
 ];
 
 function App() {
-  const [activeSection, setActiveSection] = useState(categories[0].id);
   const [lightbox, setLightbox] = useState(null);
-
-  useEffect(() => {
-    const sections = categories.map((c) => document.getElementById(c.id)).filter(Boolean);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (visible.length > 0) {
-          const top = visible.reduce((a, b) =>
-            a.boundingClientRect.top < b.boundingClientRect.top ? a : b,
-          );
-          setActiveSection(top.target.id);
-        }
-      },
-      { rootMargin: '-35% 0px -55% 0px', threshold: 0 },
-    );
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
 
   const openLightbox = (categoryId, index) => setLightbox({ categoryId, index });
   const closeLightbox = () => setLightbox(null);
@@ -51,15 +32,9 @@ function App() {
       <Header />
       <Hero />
       <Intro />
-      <Nav categories={categories} active={activeSection} />
+      <Nav categories={categories} />
       <main>
-        {categories.map((cat) => (
-          <Gallery
-            key={cat.id}
-            category={cat}
-            onSelect={(index) => openLightbox(cat.id, index)}
-          />
-        ))}
+        <Gallery categories={categories} onSelect={openLightbox} />
       </main>
       <Fotolibro onSelect={(index) => openLightbox('fotolibro', index)} />
       {lightbox && activeImages && (

@@ -1,6 +1,6 @@
-function Nav({ categories, active }) {
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+function Nav({ categories }) {
+  const scrollToGallery = () => {
+    document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -8,11 +8,7 @@ function Nav({ categories, active }) {
       <ul className="nav-list">
         {categories.map((c) => (
           <li key={c.id}>
-            <button
-              type="button"
-              className={`nav-link${active === c.id ? ' is-active' : ''}`}
-              onClick={() => scrollTo(c.id)}
-            >
+            <button type="button" className="nav-link" onClick={scrollToGallery}>
               {c.label.toUpperCase()}
             </button>
           </li>
