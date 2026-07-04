@@ -11,6 +11,14 @@ const capsulaImages = import.meta.glob('../assets/images/capsula/*', {
   import: 'default',
 });
 
+// Filled in per category as real project descriptions come in; index matches
+// the alphabetical file order within each assets/images/<category> folder.
+const descriptions = {
+  proyectos: [],
+  works: [],
+  capsula: [],
+};
+
 function toSortedArray(globObj, prefix) {
   return Object.keys(globObj)
     .sort()
@@ -18,6 +26,7 @@ function toSortedArray(globObj, prefix) {
       id: `${prefix}-${i}`,
       src: globObj[key],
       alt: `${prefix} ${i + 1}`,
+      description: descriptions[prefix]?.[i] ?? '',
     }));
 }
 

@@ -24,18 +24,23 @@ function Lightbox({ images, index, onClose, onNavigate }) {
       <button type="button" className="lightbox-close" onClick={onClose} aria-label="Cerrar">
         &times;
       </button>
-      <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-        <div className="lightbox-main">
-          <img src={current.src} alt={current.alt} />
+      <div className="lightbox-scroll">
+        <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-images">
+            <div className="lightbox-main">
+              <img src={current.src} alt={current.alt} />
+            </div>
+            <button
+              type="button"
+              className="lightbox-side"
+              onClick={() => onNavigate(nextIndex)}
+              aria-label="Ver siguiente imagen"
+            >
+              <img src={next.src} alt={next.alt} />
+            </button>
+          </div>
+          {current.description && <p className="lightbox-description">{current.description}</p>}
         </div>
-        <button
-          type="button"
-          className="lightbox-side"
-          onClick={() => onNavigate(nextIndex)}
-          aria-label="Ver siguiente imagen"
-        >
-          <img src={next.src} alt={next.alt} />
-        </button>
       </div>
     </div>
   );

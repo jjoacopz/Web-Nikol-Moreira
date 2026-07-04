@@ -199,98 +199,50 @@
   }
 }
 
-/* Fotolibro */
-.fotolibro {
-  padding: 96px 32px 64px;
-}
-
-.fotolibro-label {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  color: #666;
-  margin-bottom: 24px;
-}
-
-.fotolibro-images {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  margin-bottom: 32px;
-}
-
-.fotolibro-main {
-  flex: 2 1 0;
-  max-width: 480px;
-}
-
-.fotolibro-side {
-  flex: 1 1 0;
-  max-width: 260px;
-  margin-top: 40px;
-}
-
-.fotolibro-main img,
-.fotolibro-side img {
-  width: 100%;
-  height: auto;
-}
-
-.fotolibro-text {
-  max-width: 720px;
-  font-size: 13px;
-  line-height: 1.7;
-  color: #333;
-}
-
-@media (max-width: 640px) {
-  .fotolibro-images {
-    flex-direction: column;
-  }
-  .fotolibro-main,
-  .fotolibro-side {
-    max-width: 100%;
-  }
-  .fotolibro-side {
-    margin-top: 0;
-  }
-}
-
 /* Lightbox */
 .lightbox {
   position: fixed;
   inset: 0;
   z-index: 100;
   background: #0a0a0a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px;
+  overflow-y: auto;
 }
 
 .lightbox-close {
-  position: absolute;
+  position: fixed;
   top: 24px;
   right: 32px;
   font-size: 32px;
   line-height: 1;
   color: #fff;
+  z-index: 1;
+}
+
+.lightbox-scroll {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 48px;
 }
 
 .lightbox-content {
+  max-width: 100%;
+}
+
+.lightbox-images {
   display: flex;
   align-items: center;
   gap: 32px;
   max-width: 100%;
-  max-height: 100%;
 }
 
 .lightbox-main {
-  max-height: 85vh;
+  max-height: 75vh;
 }
 
 .lightbox-main img {
-  max-height: 85vh;
+  max-height: 75vh;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -312,13 +264,20 @@
   height: auto;
 }
 
+.lightbox-description {
+  max-width: 640px;
+  margin: 32px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #ddd;
+}
+
 @media (max-width: 720px) {
-  .lightbox {
+  .lightbox-scroll {
     padding: 16px;
   }
-  .lightbox-content {
+  .lightbox-images {
     flex-direction: column;
-    overflow-y: auto;
   }
   .lightbox-main img {
     max-height: 55vh;
