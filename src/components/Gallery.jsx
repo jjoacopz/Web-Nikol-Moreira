@@ -9,7 +9,7 @@ function Gallery({ categories, onSelect }) {
     <section id="gallery" className="gallery">
       <div className="gallery-columns">
         {categories.map((category) => (
-          <div key={category.id} className="gallery-column">
+          <div key={category.id} id={category.id} className="gallery-column">
             <div
               className="gallery-grid"
               style={{ columnCount: COLUMNS_BY_CATEGORY[category.id] ?? 2 }}

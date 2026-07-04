@@ -1,8 +1,8 @@
 import Logo from './Logo';
 
 function Nav({ categories }) {
-  const scrollToGallery = () => {
-    document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const scrollToCategory = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -10,7 +10,7 @@ function Nav({ categories }) {
       <ul className="nav-list">
         {categories.map((c) => (
           <li key={c.id}>
-            <button type="button" className="nav-link" onClick={scrollToGallery}>
+            <button type="button" className="nav-link" onClick={() => scrollToCategory(c.id)}>
               {c.label.toUpperCase()}
             </button>
           </li>
