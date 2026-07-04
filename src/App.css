@@ -57,7 +57,7 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 18px;
+  font-size: 32px;
   letter-spacing: 0.5px;
   color: #1a1a1a;
   text-align: center;
@@ -68,7 +68,7 @@
   .hero-quote {
     white-space: normal;
     width: 80%;
-    font-size: 15px;
+    font-size: 20px;
   }
 }
 
