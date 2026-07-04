@@ -164,7 +164,7 @@
 .gallery-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 64px;
   align-items: start;
 }
 
@@ -179,13 +179,13 @@
 }
 
 .gallery-grid {
-  column-gap: 12px;
+  column-gap: 20px;
 }
 
 .gallery-item {
   display: block;
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
   break-inside: avoid;
   overflow: hidden;
 }

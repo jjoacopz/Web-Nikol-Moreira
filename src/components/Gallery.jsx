@@ -1,7 +1,7 @@
 const COLUMNS_BY_CATEGORY = {
-  proyectos: 3,
-  works: 2,
-  capsula: 2,
+  proyectos: 4,
+  works: 3,
+  capsula: 3,
 };
 
 function Gallery({ categories, onSelect }) {
