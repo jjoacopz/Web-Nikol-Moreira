@@ -11,8 +11,8 @@ function Logo({ className, color = 'currentColor' }) {
         fill="none"
         stroke={color}
         strokeWidth="15"
-        strokeLinejoin="round"
-        strokeLinecap="round"
+        strokeLinejoin="miter"
+        strokeLinecap="butt"
       />
     </svg>
   );
