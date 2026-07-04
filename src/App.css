@@ -13,9 +13,8 @@
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  width: 26px;
+  height: auto;
 }
 
 .site-title {
@@ -139,9 +138,8 @@
 }
 
 .nav-logo {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  width: 22px;
+  height: auto;
 }
 
 @media (max-width: 640px) {

@@ -1,3 +1,5 @@
+import Logo from './Logo';
+
 function Nav({ categories }) {
   const scrollToGallery = () => {
     document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -14,7 +16,7 @@ function Nav({ categories }) {
           </li>
         ))}
       </ul>
-      <span className="nav-logo">NM</span>
+      <Logo className="nav-logo" />
     </nav>
   );
 }
