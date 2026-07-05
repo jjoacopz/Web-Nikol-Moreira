@@ -1,6 +1,10 @@
 import Logo from './Logo';
+import { useLanguage } from '../i18n/LanguageContext';
+import { categoryLabels } from '../i18n/strings';
 
 function Nav({ categories }) {
+  const { language } = useLanguage();
+
   const scrollToCategory = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -11,7 +15,7 @@ function Nav({ categories }) {
         {categories.map((c) => (
           <li key={c.id}>
             <button type="button" className="nav-link" onClick={() => scrollToCategory(c.id)}>
-              {c.label.toUpperCase()}
+              {categoryLabels[c.id][language].toUpperCase()}
             </button>
           </li>
         ))}

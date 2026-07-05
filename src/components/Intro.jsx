@@ -1,24 +1,20 @@
 import portrait from '../assets/images/portrait.jpg';
+import { useLanguage } from '../i18n/LanguageContext';
+import { strings } from '../i18n/strings';
 
 function Intro() {
+  const { language } = useLanguage();
+  const t = strings[language];
+
   return (
     <section className="intro">
       <p className="intro-quote">
-        &ldquo;presencia silenciosa,
+        {t.introQuoteLine1}
         <br />
-        que deja huella sin hacer ruido.&rdquo;
+        {t.introQuoteLine2}
       </p>
       <img src={portrait} alt="Retrato de Nikol Moreira" className="intro-portrait" />
-      <p className="intro-bio">
-        Soy Nikol Moreira, nacida a las afueras de Montevideo. Mi mirada se construye
-        desde un entorno ligado al campo, atravesado por el esfuerzo f&iacute;sico, la
-        incertidumbre y el paso del tiempo sobre el cuerpo. En paralelo, encontr&eacute;
-        en la moda un espacio de expresi&oacute;n que, aunque en un inicio se sent&iacute;a
-        lejano, fui haciendo propio de forma intuitiva y personal. Hoy trabajo desde el
-        cruce entre ambos mundos, explorando la tensi&oacute;n entre lo real y lo
-        construido, desarrollando proyectos que traducen ese contraste en una
-        est&eacute;tica propia.
-      </p>
+      <p className="intro-bio">{t.bio}</p>
     </section>
   );
 }

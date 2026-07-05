@@ -1,10 +1,4 @@
-import { projectsMeta } from './projectsMeta';
-
-const categoryDefs = [
-  { id: 'proyectos', label: 'Proyectos' },
-  { id: 'works', label: 'Works' },
-  { id: 'capsula', label: 'Capsula' },
-];
+const categoryIds = ['proyectos', 'works', 'capsula'];
 
 // Matches src/assets/images/<category>/<project-slug>/<file>
 const allImages = import.meta.glob('../assets/images/{proyectos,works,capsula}/*/*', {
@@ -27,22 +21,13 @@ function buildProjects(categoryId) {
 
   return Object.keys(bySlug)
     .sort()
-    .map((slug) => {
-      const meta = projectsMeta[slug];
-      return {
-        id: slug,
-        title: meta?.title ?? slug,
-        description: meta?.description ?? '',
-        images: bySlug[slug].map((src, i) => ({
-          id: `${slug}-${i}`,
-          src,
-          alt: `${meta?.title ?? slug} ${i + 1}`,
-        })),
-      };
-    });
+    .map((slug) => ({
+      id: slug,
+      images: bySlug[slug].map((src, i) => ({ id: `${slug}-${i}`, src })),
+    }));
 }
 
-export const categories = categoryDefs.map((c) => ({
-  ...c,
-  projects: buildProjects(c.id),
+export const categories = categoryIds.map((id) => ({
+  id,
+  projects: buildProjects(id),
 }));

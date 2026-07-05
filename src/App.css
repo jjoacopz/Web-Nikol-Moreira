@@ -27,15 +27,34 @@
   text-align: center;
 }
 
+.lang-toggle {
+  grid-column: 3;
+  justify-self: end;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border: 1px solid #111;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.lang-toggle:hover {
+  background: #111;
+  color: #fff;
+}
+
 @media (max-width: 640px) {
   .header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr auto;
     padding: 20px;
   }
   .site-title {
     grid-column: 2;
     font-size: 15px;
     letter-spacing: 2.5px;
+  }
+  .lang-toggle {
+    font-size: 11px;
+    padding: 3px 8px;
   }
 }
 
