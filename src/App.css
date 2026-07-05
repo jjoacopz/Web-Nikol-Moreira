@@ -168,6 +168,7 @@
   font-size: 13px;
   letter-spacing: 1.5px;
   color: #111;
+  white-space: nowrap;
   transition: font-weight 0.15s ease;
 }
 
@@ -190,8 +191,19 @@
 }
 
 @media (max-width: 640px) {
+  .nav {
+    padding: 16px 20px;
+  }
   .nav-list {
-    gap: 24px;
+    gap: 14px;
+    overflow-x: auto;
+  }
+  .nav-link {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .nav-logo {
+    display: none;
   }
 }
 
