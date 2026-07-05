@@ -14,19 +14,20 @@ function Gallery({ categories, onSelect }) {
               className="gallery-grid"
               style={{ columnCount: COLUMNS_BY_CATEGORY[category.id] ?? 2 }}
             >
-              {category.projects.map((project) =>
-                project.images.map((img, i) => (
+              {category.projects.map((project) => {
+                const cover = project.images[0];
+                return (
                   <button
-                    key={img.id}
+                    key={project.id}
                     type="button"
                     className="gallery-item"
-                    onClick={() => onSelect(category.id, project.id, i)}
-                    aria-label={`Ver ${img.alt} en grande`}
+                    onClick={() => onSelect(category.id, project.id, 0)}
+                    aria-label={`Ver proyecto ${project.title}`}
                   >
-                    <img src={img.src} alt={img.alt} loading="lazy" />
+                    <img src={cover.src} alt={project.title} loading="lazy" />
                   </button>
-                )),
-              )}
+                );
+              })}
             </div>
           </div>
         ))}
