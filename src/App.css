@@ -304,15 +304,24 @@
 
 @media (max-width: 720px) {
   .lightbox-scroll {
-    padding: 16px;
+    padding: 12px;
   }
   .lightbox-images {
-    flex-direction: column;
+    gap: 12px;
+  }
+  .lightbox-main {
+    max-height: 60vh;
+    flex: 2 1 0;
+    min-width: 0;
   }
   .lightbox-main img {
-    max-height: 55vh;
+    max-height: 60vh;
+    width: 100%;
+    object-fit: contain;
   }
   .lightbox-side {
-    width: 120px;
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
   }
 }
