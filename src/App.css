@@ -213,6 +213,10 @@
   scroll-margin-top: 80px;
 }
 
+.gallery-category-title {
+  display: none;
+}
+
 .gallery-grid {
   column-gap: 20px;
 }
@@ -241,6 +245,16 @@
   .gallery-columns {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .gallery-category-title {
+    display: block;
+    margin: 0 0 24px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
   }
 }
 

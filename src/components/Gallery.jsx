@@ -1,5 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext';
-import { strings } from '../i18n/strings';
+import { strings, categoryLabels } from '../i18n/strings';
 import { projectsMeta } from '../data/projectsMeta';
 
 const COLUMNS_BY_CATEGORY = {
@@ -17,6 +17,9 @@ function Gallery({ categories, onSelect }) {
       <div className="gallery-columns">
         {categories.map((category) => (
           <div key={category.id} id={category.id} className="gallery-column">
+            <h2 className="gallery-category-title">
+              {categoryLabels[category.id]?.[language] ?? category.id}
+            </h2>
             <div
               className="gallery-grid"
               style={{ columnCount: COLUMNS_BY_CATEGORY[category.id] ?? 2 }}
