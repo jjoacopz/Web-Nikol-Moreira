@@ -253,7 +253,7 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: #0a0a0a;
+  background: #fff;
   overflow-y: auto;
 }
 
@@ -263,7 +263,7 @@
   right: 32px;
   font-size: 32px;
   line-height: 1;
-  color: #fff;
+  color: #111;
   z-index: 1;
 }
 
@@ -318,7 +318,7 @@
   margin: 32px 0 0;
   font-size: 13px;
   line-height: 1.7;
-  color: #ddd;
+  color: #333;
 }
 
 @media (max-width: 720px) {
