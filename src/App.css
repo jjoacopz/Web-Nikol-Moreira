@@ -264,11 +264,11 @@
 
 @media (max-width: 480px) {
   .gallery-grid-unified {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 6px;
   }
   .gallery-item-unified {
-    height: 80px;
+    height: 70px;
   }
 }
 
