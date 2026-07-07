@@ -187,10 +187,10 @@
   .nav-list {
     grid-template-columns: none;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .nav-list li {
-    text-align: left;
+    text-align: center;
   }
 }
 
