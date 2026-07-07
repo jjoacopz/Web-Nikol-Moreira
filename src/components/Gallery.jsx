@@ -3,8 +3,8 @@ import { strings } from '../i18n/strings';
 import { projectsMeta } from '../data/projectsMeta';
 
 function sizeClassFor(index) {
-  if (index % 8 === 0) return 'is-large';
-  if (index % 5 === 3) return 'is-wide';
+  if (index % 6 === 3) return 'is-wide';
+  if (index % 7 === 5) return 'is-tall';
   return '';
 }
 
