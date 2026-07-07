@@ -13,6 +13,7 @@ import './App.css';
 function App() {
   const { language } = useLanguage();
   const [lightbox, setLightbox] = useState(null);
+  const [activeFilter, setActiveFilter] = useState(null);
 
   const openLightbox = (categoryId, projectId, index) =>
     setLightbox({ categoryId, projectId, index });
@@ -28,9 +29,9 @@ function App() {
       <Header />
       <Hero />
       <Intro />
-      <Nav categories={categories} />
+      <Nav categories={categories} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       <main>
-        <Gallery categories={categories} onSelect={openLightbox} />
+        <Gallery categories={categories} onSelect={openLightbox} activeFilter={activeFilter} />
       </main>
       {lightbox && activeProject && (
         <Lightbox

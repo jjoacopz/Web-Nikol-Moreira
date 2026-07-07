@@ -1,47 +1,36 @@
 import { useLanguage } from '../i18n/LanguageContext';
-import { strings, categoryLabels } from '../i18n/strings';
+import { strings } from '../i18n/strings';
 import { projectsMeta } from '../data/projectsMeta';
 
-const COLUMNS_BY_CATEGORY = {
-  proyectos: 4,
-  works: 3,
-  capsula: 3,
-};
-
-function Gallery({ categories, onSelect }) {
+function Gallery({ categories, onSelect, activeFilter }) {
   const { language } = useLanguage();
   const t = strings[language];
 
+  const allProjects = categories.flatMap((category) =>
+    category.projects.map((project) => ({ ...project, categoryId: category.id }))
+  );
+
   return (
     <section id="gallery" className="gallery">
-      <div className="gallery-columns">
-        {categories.map((category) => (
-          <div key={category.id} id={category.id} className="gallery-column">
-            <h2 className="gallery-category-title">
-              {categoryLabels[category.id]?.[language] ?? category.id}
-            </h2>
-            <div
-              className="gallery-grid"
-              style={{ columnCount: COLUMNS_BY_CATEGORY[category.id] ?? 2 }}
+      <div className="gallery-grid-unified">
+        {allProjects.map((project) => {
+          const cover = project.images[0];
+          const title = projectsMeta[project.id]?.[language]?.title ?? project.id;
+          const visible = !activeFilter || activeFilter === project.categoryId;
+          return (
+            <button
+              key={project.id}
+              type="button"
+              className={`gallery-item-unified${visible ? '' : ' is-hidden'}`}
+              onClick={() => onSelect(project.categoryId, project.id, 0)}
+              aria-label={`${t.viewProject} ${title}`}
+              aria-hidden={!visible}
+              tabIndex={visible ? 0 : -1}
             >
-              {category.projects.map((project) => {
-                const cover = project.images[0];
-                const title = projectsMeta[project.id]?.[language]?.title ?? project.id;
-                return (
-                  <button
-                    key={project.id}
-                    type="button"
-                    className="gallery-item"
-                    onClick={() => onSelect(category.id, project.id, 0)}
-                    aria-label={`${t.viewProject} ${title}`}
-                  >
-                    <img src={cover.src} alt={title} loading="lazy" />
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        ))}
+              <img src={cover.src} alt={title} loading="lazy" />
+            </button>
+          );
+        })}
       </div>
     </section>
   );
