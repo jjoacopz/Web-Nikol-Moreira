@@ -6,9 +6,16 @@ function Gallery({ categories, onSelect, activeFilter }) {
   const { language } = useLanguage();
   const t = strings[language];
 
-  const allProjects = categories.flatMap((category) =>
+  const projectsByCategory = categories.map((category) =>
     category.projects.map((project) => ({ ...project, categoryId: category.id }))
   );
+  const maxLength = Math.max(...projectsByCategory.map((list) => list.length), 0);
+  const allProjects = [];
+  for (let i = 0; i < maxLength; i += 1) {
+    for (const list of projectsByCategory) {
+      if (list[i]) allProjects.push(list[i]);
+    }
+  }
 
   return (
     <section id="gallery" className="gallery">
