@@ -4,6 +4,12 @@ export const categoryLabels = {
   capsula: { es: 'Territorios Compartidos', en: 'Shared Territories' },
 };
 
+export const contactInfo = {
+  email: 'nmagencia2006@gmail.com',
+  phone: '+598 98 266 744',
+  instagram: '@moreira_nikol',
+};
+
 export const strings = {
   es: {
     heroQuote: '"La moda como traducción de lo vivido"',
@@ -16,6 +22,7 @@ export const strings = {
     langToggle: 'EN',
     menuLabel: 'MENU',
     aboutLabel: 'Sobre mí',
+    contactLabel: 'Contacto',
   },
   en: {
     heroQuote: '"Fashion as a translation of what’s lived"',
@@ -28,5 +35,6 @@ export const strings = {
     langToggle: 'ES',
     menuLabel: 'MENU',
     aboutLabel: 'About',
+    contactLabel: 'Contact',
   },
 };

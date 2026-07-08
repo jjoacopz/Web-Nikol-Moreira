@@ -37,11 +37,11 @@ function App() {
     <div className="site">
       <Header onNavigate={handleMenuNavigate} />
       <Hero />
-      <Intro />
       <Nav categories={categories} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       <main>
         <Gallery categories={categories} onSelect={openLightbox} activeFilter={activeFilter} />
       </main>
+      <Intro />
       {lightbox && activeProject && (
         <Lightbox
           images={activeProject.images}
