@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Intro from './components/Intro';
+import PhotoStrip from './components/PhotoStrip';
 import Nav from './components/Nav';
 import Gallery from './components/Gallery';
 import Lightbox from './components/Lightbox';
@@ -37,6 +38,7 @@ function App() {
     <div className="site">
       <Header onNavigate={handleMenuNavigate} />
       <Hero />
+      <PhotoStrip />
       <Nav categories={categories} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       <main>
         <Gallery categories={categories} onSelect={openLightbox} activeFilter={activeFilter} />
