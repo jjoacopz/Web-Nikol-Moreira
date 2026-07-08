@@ -177,7 +177,7 @@
 .photo-strip {
   display: flex;
   margin: 0 32px 64px;
-  height: 380px;
+  height: 560px;
   overflow: hidden;
 }
 
@@ -206,13 +206,13 @@
 
 @media (max-width: 900px) {
   .photo-strip {
-    height: 280px;
+    height: 400px;
   }
 }
 
 @media (max-width: 640px) {
   .photo-strip {
-    height: 200px;
+    height: 280px;
     margin-bottom: 48px;
   }
 }
