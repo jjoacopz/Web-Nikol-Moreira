@@ -14,6 +14,8 @@ export const strings = {
     nextImage: 'Ver siguiente imagen',
     viewProject: 'Ver proyecto',
     langToggle: 'EN',
+    menuLabel: 'MENU',
+    aboutLabel: 'Sobre mí',
   },
   en: {
     heroQuote: '"Fashion as a translation of what’s lived"',
@@ -24,5 +26,7 @@ export const strings = {
     nextImage: 'View next image',
     viewProject: 'View project',
     langToggle: 'ES',
+    menuLabel: 'MENU',
+    aboutLabel: 'About',
   },
 };

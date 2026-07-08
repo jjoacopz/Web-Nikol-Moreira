@@ -7,7 +7,7 @@ function Intro() {
   const t = strings[language];
 
   return (
-    <section className="intro">
+    <section id="about" className="intro">
       <p className="intro-quote">
         {t.introQuoteLine1}
         <br />

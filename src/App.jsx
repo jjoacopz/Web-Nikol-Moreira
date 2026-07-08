@@ -19,6 +19,15 @@ function App() {
     setLightbox({ categoryId, projectId, index });
   const closeLightbox = () => setLightbox(null);
 
+  const handleMenuNavigate = (target) => {
+    if (target === 'about') {
+      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    setActiveFilter(target);
+    document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const activeProject = categories
     .find((c) => c.id === lightbox?.categoryId)
     ?.projects.find((p) => p.id === lightbox?.projectId);
@@ -26,7 +35,7 @@ function App() {
 
   return (
     <div className="site">
-      <Header />
+      <Header onNavigate={handleMenuNavigate} />
       <Hero />
       <Intro />
       <Nav categories={categories} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
