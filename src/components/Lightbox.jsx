@@ -43,6 +43,7 @@ function Lightbox({ images, title, description, index, onClose, onNavigate }) {
               <img src={next.src} alt={title} />
             </button>
           </div>
+          {title && <h2 className="lightbox-title">{title}</h2>}
           {description && <p className="lightbox-description">{description}</p>}
         </div>
       </div>

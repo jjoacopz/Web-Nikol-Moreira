@@ -509,9 +509,18 @@
   height: auto;
 }
 
-.lightbox-description {
+.lightbox-title {
   max-width: 640px;
   margin: 32px 0 0;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: #111;
+}
+
+.lightbox-description {
+  max-width: 640px;
+  margin: 12px 0 0;
   font-size: 13px;
   line-height: 1.7;
   color: #333;
