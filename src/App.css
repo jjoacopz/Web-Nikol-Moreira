@@ -156,10 +156,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Arial MT Pro', Arial, sans-serif;
   font-size: 26px;
   letter-spacing: 0.5px;
   color: #1a1a1a;
   text-align: center;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
