@@ -30,6 +30,7 @@ function Lightbox({ images, title, description, index, onClose, onNavigate }) {
       </button>
       <div className="lightbox-scroll">
         <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+          {title && <h2 className="lightbox-title">{title}</h2>}
           <div className="lightbox-images">
             <div className="lightbox-main">
               <img src={current.src} alt={title} />
@@ -43,7 +44,6 @@ function Lightbox({ images, title, description, index, onClose, onNavigate }) {
               <img src={next.src} alt={title} />
             </button>
           </div>
-          {title && <h2 className="lightbox-title">{title}</h2>}
           {description && <p className="lightbox-description">{description}</p>}
         </div>
       </div>
