@@ -4,7 +4,7 @@ const images = Object.values(
   import.meta.glob('../assets/images/hero-strip/*', { eager: true, import: 'default' })
 ).sort();
 
-const INTERVAL_MS = 1000;
+const INTERVAL_MS = 450;
 
 function PhotoStrip() {
   const [tick, setTick] = useState(0);

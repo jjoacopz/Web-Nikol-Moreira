@@ -3,7 +3,7 @@ import Logo from './Logo';
 import { useLanguage } from '../i18n/LanguageContext';
 import { strings, categoryLabels } from '../i18n/strings';
 
-const menuCategoryOrder = ['works', 'proyectos', 'capsula'];
+const menuCategoryOrder = ['proyectos', 'works', 'capsula'];
 
 function Header({ onNavigate }) {
   const { language, toggleLanguage } = useLanguage();

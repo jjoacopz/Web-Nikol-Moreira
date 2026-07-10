@@ -206,7 +206,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: photo-strip-fade 0.5s ease;
+  animation: photo-strip-fade 0.2s ease;
 }
 
 @keyframes photo-strip-fade {
