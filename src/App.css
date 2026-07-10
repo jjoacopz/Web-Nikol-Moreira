@@ -206,7 +206,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
   animation: photo-strip-fade 0.2s ease;
 }
 
