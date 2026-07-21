@@ -290,4 +290,16 @@ export const projectsMeta = {
         'As part of Integra Showrooms, styling was reinforced for graduating students Alfonsina González and Franco Smaldone, with whom I had already worked previously developing styling for their photographic and audiovisual productions. The work focused on reinterpreting and adjusting the looks specifically for their runway presentation.',
     },
   },
+  '25-disociado': {
+    es: {
+      title: '"Disociado" | Estilismo',
+      description:
+        'Desarrollo de estilismos para Disociado, colección diseñada por Santiago Turrión. A partir de las prendas propuestas por el diseñador, se construyeron looks que acompañan y fortalecen el concepto de la colección.',
+    },
+    en: {
+      title: '"Disociado" | Styling',
+      description:
+        "Styling development for Disociado, a collection designed by Santiago Turrión. Working from the garments proposed by the designer, looks were built to accompany and strengthen the collection's concept.",
+    },
+  },
 };
