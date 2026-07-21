@@ -6,6 +6,8 @@ const allImages = import.meta.glob('../assets/images/{proyectos,works,capsula}/*
   import: 'default',
 });
 
+const videoExtension = /\.(mp4|webm|mov)$/i;
+
 function buildProjects(categoryId) {
   const bySlug = {};
   const prefix = `../assets/images/${categoryId}/`;
@@ -16,14 +18,17 @@ function buildProjects(categoryId) {
       const rest = path.slice(prefix.length);
       const slug = rest.split('/')[0];
       bySlug[slug] ??= [];
-      bySlug[slug].push(allImages[path]);
+      bySlug[slug].push({
+        src: allImages[path],
+        type: videoExtension.test(path) ? 'video' : 'image',
+      });
     });
 
   return Object.keys(bySlug)
     .sort()
     .map((slug) => ({
       id: slug,
-      images: bySlug[slug].map((src, i) => ({ id: `${slug}-${i}`, src })),
+      images: bySlug[slug].map((item, i) => ({ id: `${slug}-${i}`, ...item })),
     }));
 }
 

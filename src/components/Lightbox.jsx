@@ -33,7 +33,11 @@ function Lightbox({ images, title, description, index, onClose, onNavigate }) {
           {title && <h2 className="lightbox-title">{title}</h2>}
           <div className="lightbox-images">
             <div className="lightbox-main">
-              <img src={current.src} alt={title} />
+              {current.type === 'video' ? (
+                <video src={current.src} controls playsInline />
+              ) : (
+                <img src={current.src} alt={title} />
+              )}
             </div>
             <button
               type="button"
@@ -41,7 +45,11 @@ function Lightbox({ images, title, description, index, onClose, onNavigate }) {
               onClick={() => onNavigate(nextIndex)}
               aria-label={t.nextImage}
             >
-              <img src={next.src} alt={title} />
+              {next.type === 'video' ? (
+                <video src={next.src} muted playsInline />
+              ) : (
+                <img src={next.src} alt={title} />
+              )}
             </button>
           </div>
           {description && <p className="lightbox-description">{description}</p>}

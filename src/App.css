@@ -478,7 +478,8 @@
   max-height: 75vh;
 }
 
-.lightbox-main img {
+.lightbox-main img,
+.lightbox-main video {
   max-height: 75vh;
   width: auto;
   height: auto;
@@ -496,7 +497,8 @@
   opacity: 1;
 }
 
-.lightbox-side img {
+.lightbox-side img,
+.lightbox-side video {
   width: 100%;
   height: auto;
 }
@@ -530,7 +532,8 @@
     flex: 2 1 0;
     min-width: 0;
   }
-  .lightbox-main img {
+  .lightbox-main img,
+  .lightbox-main video {
     max-height: 60vh;
     width: 100%;
     object-fit: contain;
