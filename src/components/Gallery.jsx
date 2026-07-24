@@ -21,7 +21,7 @@ function Gallery({ categories, onSelect, activeFilter }) {
     <section id="gallery" className="gallery">
       <div className="gallery-grid-unified">
         {allProjects.map((project) => {
-          const cover = project.images[0];
+          const cover = project.images.find((item) => item.type === 'image') ?? project.images[0];
           const title = projectsMeta[project.id]?.[language]?.title ?? project.id;
           const visible = !activeFilter || activeFilter === project.categoryId;
           return (
