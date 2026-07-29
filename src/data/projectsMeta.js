@@ -326,4 +326,16 @@ export const projectsMeta = {
         'The second photobook documents criollas (traditional gaucho gatherings) from a documentary perspective, centered on the reality of those who take part in them. Through portraits, everyday scenes, and records of traditional dress, the project shows the effort, customs, and forms of gathering that are part of this tradition. Rather than an idealized celebration, it seeks to preserve the memory of a space where work, identity, and cultural practices remain present in the lives of many people.',
     },
   },
+  '03-segunda-piel': {
+    es: {
+      title: '"Segunda Piel" | Dirección Creativa y Estilismo',
+      description:
+        'Esta producción funciona como un archivo de looks construidos a partir de la observación del trabajo rural, sus prendas, materiales y códigos de vestir. Los estilismos, previamente curados para el registro documental, son trasladados a una modelo con el objetivo de preservar y reinterpretar estos elementos desde un lenguaje editorial. Sobre un fondo neutro, la propuesta pone en valor una estética nacida de lo cotidiano, transformando la vestimenta de trabajo en un registro visual que dialoga entre memoria, identidad y moda.',
+    },
+    en: {
+      title: '"Segunda Piel" | Creative Direction and Styling',
+      description:
+        "This production works as an archive of looks built from the observation of rural labor, its garments, materials, and dress codes. The styling, previously curated for the documentary record, is carried over onto a model with the aim of preserving and reinterpreting these elements through an editorial language. Against a neutral background, the proposal highlights an aesthetic born from the everyday, transforming workwear into a visual record that moves between memory, identity, and fashion.",
+    },
+  },
 };
