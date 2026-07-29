@@ -49,6 +49,7 @@ function FlipBook({ images, title, description, onClose }) {
               minHeight={340}
               maxHeight={860}
               showCover
+              usePortrait={false}
               maxShadowOpacity={0.4}
               className="flipbook"
             >
