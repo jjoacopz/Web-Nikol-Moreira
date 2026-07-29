@@ -302,4 +302,16 @@ export const projectsMeta = {
         "Styling development for Disociado, a collection designed by Santiago Turrión. Working from the garments proposed by the designer, looks were built to accompany and strengthen the collection's concept.",
     },
   },
+  '01-la-memoria-de-las-manos': {
+    es: {
+      title: '"La Memoria de las Manos" | Dirección Creativa, Estilismo y Fotografía',
+      description:
+        'El primer fotolibro retrata a quinteros desde la cercanía y la convivencia con su realidad cotidiana. A través de retratos y escenas reales, el proyecto busca conservar la memoria, los tiempos y las formas de vida de quienes trabajan la tierra todos los días.',
+    },
+    en: {
+      title: '"La Memoria de las Manos" | Creative Direction, Styling and Photography',
+      description:
+        'The first photobook portrays quinteros (market gardeners) from a place of closeness and everyday coexistence with their reality. Through portraits and real scenes, the project seeks to preserve the memory, rhythms, and ways of life of those who work the land every day.',
+    },
+  },
 };
