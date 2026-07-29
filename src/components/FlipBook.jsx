@@ -3,8 +3,8 @@ import HTMLFlipBook from 'react-pageflip';
 import { useLanguage } from '../i18n/LanguageContext';
 import { strings } from '../i18n/strings';
 
-const Page = forwardRef(({ item }, ref) => (
-  <div className="flipbook-page" ref={ref}>
+const Page = forwardRef(({ item, isCover }, ref) => (
+  <div className={`flipbook-page${isCover ? ' flipbook-page-cover' : ''}`} ref={ref}>
     {item.type === 'video' ? (
       <video src={item.src} controls playsInline />
     ) : (
@@ -53,8 +53,8 @@ function FlipBook({ images, title, description, onClose }) {
               maxShadowOpacity={0.4}
               className="flipbook"
             >
-              {images.map((item) => (
-                <Page key={item.id} item={item} />
+              {images.map((item, index) => (
+                <Page key={item.id} item={item} isCover={index === 0} />
               ))}
             </HTMLFlipBook>
             <button
