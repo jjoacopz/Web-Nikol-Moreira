@@ -34,6 +34,7 @@ function App() {
     .find((c) => c.id === lightbox?.categoryId)
     ?.projects.find((p) => p.id === lightbox?.projectId);
   const activeMeta = activeProject && projectsMeta[activeProject.id]?.[language];
+  const isFlipbook = lightbox?.categoryId === 'capsula' && activeProject?.id !== '03-segunda-piel';
 
   return (
     <div className="site">
@@ -45,7 +46,7 @@ function App() {
         <Gallery categories={categories} onSelect={openLightbox} activeFilter={activeFilter} />
       </main>
       <Intro />
-      {lightbox && activeProject && lightbox.categoryId === 'capsula' && (
+      {lightbox && activeProject && isFlipbook && (
         <FlipBook
           images={activeProject.images}
           title={activeMeta?.title}
@@ -53,7 +54,7 @@ function App() {
           onClose={closeLightbox}
         />
       )}
-      {lightbox && activeProject && lightbox.categoryId !== 'capsula' && (
+      {lightbox && activeProject && !isFlipbook && (
         <Lightbox
           images={activeProject.images}
           title={activeMeta?.title}
