@@ -314,4 +314,16 @@ export const projectsMeta = {
         'The first photobook portrays quinteros (market gardeners) from a place of closeness and everyday coexistence with their reality. Through portraits and real scenes, the project seeks to preserve the memory, rhythms, and ways of life of those who work the land every day.',
     },
   },
+  '02-donde-galopa-la-tradicion': {
+    es: {
+      title: '"Donde Galopa la Tradición" | Dirección Creativa, Estilismo y Fotografía',
+      description:
+        'El segundo fotolibro registra las criollas desde una mirada documental, centrada en la realidad de quienes participan de ellas. A través de retratos, escenas cotidianas y registros de la vestimenta tradicional, el proyecto muestra el esfuerzo, las costumbres y las formas de encuentro que forman parte de esta tradición. Más que una celebración idealizada, busca conservar la memoria de un espacio donde el trabajo, la identidad y las prácticas culturales continúan vigentes en la vida de muchas personas.',
+    },
+    en: {
+      title: '"Donde Galopa la Tradición" | Creative Direction, Styling and Photography',
+      description:
+        'The second photobook documents criollas (traditional gaucho gatherings) from a documentary perspective, centered on the reality of those who take part in them. Through portraits, everyday scenes, and records of traditional dress, the project shows the effort, customs, and forms of gathering that are part of this tradition. Rather than an idealized celebration, it seeks to preserve the memory of a space where work, identity, and cultural practices remain present in the lives of many people.',
+    },
+  },
 };
