@@ -6,6 +6,7 @@ import PhotoStrip from './components/PhotoStrip';
 import Nav from './components/Nav';
 import Gallery from './components/Gallery';
 import Lightbox from './components/Lightbox';
+import FlipBook from './components/FlipBook';
 import { categories } from './data/gallery';
 import { projectsMeta } from './data/projectsMeta';
 import { useLanguage } from './i18n/LanguageContext';
@@ -44,7 +45,15 @@ function App() {
         <Gallery categories={categories} onSelect={openLightbox} activeFilter={activeFilter} />
       </main>
       <Intro />
-      {lightbox && activeProject && (
+      {lightbox && activeProject && lightbox.categoryId === 'capsula' && (
+        <FlipBook
+          images={activeProject.images}
+          title={activeMeta?.title}
+          description={activeMeta?.description}
+          onClose={closeLightbox}
+        />
+      )}
+      {lightbox && activeProject && lightbox.categoryId !== 'capsula' && (
         <Lightbox
           images={activeProject.images}
           title={activeMeta?.title}
