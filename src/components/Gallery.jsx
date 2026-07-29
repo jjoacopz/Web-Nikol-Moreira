@@ -6,7 +6,10 @@ function Gallery({ categories, onSelect, activeFilter }) {
   const { language } = useLanguage();
   const t = strings[language];
 
-  const projectsByCategory = categories.map((category) =>
+  const interleavedCategories = categories.filter((category) => category.id !== 'capsula');
+  const capsulaCategory = categories.find((category) => category.id === 'capsula');
+
+  const projectsByCategory = interleavedCategories.map((category) =>
     category.projects.map((project) => ({ ...project, categoryId: category.id }))
   );
   const maxLength = Math.max(...projectsByCategory.map((list) => list.length), 0);
@@ -15,6 +18,11 @@ function Gallery({ categories, onSelect, activeFilter }) {
     for (const list of projectsByCategory) {
       if (list[i]) allProjects.push(list[i]);
     }
+  }
+  if (capsulaCategory) {
+    allProjects.push(
+      ...capsulaCategory.projects.map((project) => ({ ...project, categoryId: capsulaCategory.id }))
+    );
   }
 
   return (
